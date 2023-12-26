@@ -23,6 +23,8 @@ public class SelectController : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0))
         {
+            foreach (var el in selectedObjects)
+                el.transform.GetChild(0).gameObject.SetActive(false);
             selectedObjects.Clear();
 
             Ray ray = _cam.ScreenPointToRay(Input.mousePosition);
@@ -69,6 +71,7 @@ public class SelectController : MonoBehaviour
                 foreach (var el in hits)
                 {
                     selectedObjects.Add(el.transform.gameObject);
+                    el.transform.GetChild(0).gameObject.SetActive(true);
                 }
 
                 Destroy(_cubeSelection);
