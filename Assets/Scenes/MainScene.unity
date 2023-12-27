@@ -5006,9 +5006,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   points:
   - {fileID: 1421816741}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
   factory: {fileID: 103614, guid: 1e132733b84047940b6a9043814d6ee2, type: 3}
 --- !u!1001 &976649350
 PrefabInstance:
@@ -7006,7 +7003,7 @@ Transform:
   m_GameObject: {fileID: 1421816740}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 56.9, y: 0, z: 37.1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -8354,7 +8351,7 @@ Transform:
   m_GameObject: {fileID: 1765255904}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 14.303053, y: 0.5416317, z: 9.495158}
+  m_LocalPosition: {x: 116.8, y: 0.5416317, z: 107.1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:

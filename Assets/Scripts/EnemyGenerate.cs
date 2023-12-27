@@ -25,7 +25,8 @@ public class EnemyGenerate : MonoBehaviour
                 );
             spawned.GetComponent<AutoCarCreate>().enabled = true;
             spawned.GetComponent<AutoCarCreate>().IsEnemy = true;
-            
+            spawned.GetComponent<AutoCarCreate>().StartSpawningCars();
+
         }
     }
 }

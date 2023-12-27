@@ -11,7 +11,7 @@ public class PlaceObjects : MonoBehaviour
     {
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         RaycastHit hit;
-        
+
         if (Physics.Raycast(ray, out hit, 1000f, layer))
             transform.position = hit.point;
     }
@@ -29,6 +29,8 @@ public class PlaceObjects : MonoBehaviour
             gameObject.GetComponent<AutoCarCreate>().enabled = true;
             Destroy(gameObject.GetComponent<PlaceObjects>());
         }
+
+
 
         if (Input.GetKey(KeyCode.LeftShift))
             transform.Rotate(Vector3.up * Time.deltaTime * rotateSpeed);
