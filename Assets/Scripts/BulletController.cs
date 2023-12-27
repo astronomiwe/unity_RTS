@@ -10,6 +10,7 @@ public class BulletController : MonoBehaviour
 
     private void Update()
     {
+        // посылает пулю к обьекту
         float step = speed * Time.deltaTime;
         transform.position = Vector3.MoveTowards(transform.position, position, step);
         

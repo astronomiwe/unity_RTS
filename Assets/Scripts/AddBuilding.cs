@@ -10,22 +10,25 @@ public class AddBuilding : MonoBehaviour
 
     public void PlaceBuild()
     {
-        // Создаем экземпляр здания
         currentBuildingInstance = Instantiate(building, Vector3.zero, Quaternion.identity);
     }
 
     void Update()
     {
-        // Проверяем нажатие левой кнопки мыши и наличие здания, ожидающего установки
         if (Input.GetMouseButtonDown(0) && currentBuildingInstance != null)
         {
+            // ставим здание по ЛКМ и запускаем его функционал (спавн машинок)
             AutoCarCreate autoCarCreate = currentBuildingInstance.GetComponent<AutoCarCreate>();
             if (autoCarCreate != null)
             {
                 autoCarCreate.StartSpawningCars();
             }
-            // Сбросить текущий экземпляр здания, так как он уже установлен
             currentBuildingInstance = null;
         }
+        
+        if (Input.GetMouseButtonDown(1) && currentBuildingInstance != null)
+            // отменяем установку здания по нажатию ПКМ
+            Destroy(currentBuildingInstance);
+
     }
 }

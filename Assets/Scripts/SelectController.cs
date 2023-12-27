@@ -52,6 +52,7 @@ public class SelectController : MonoBehaviour
                 float zScale = _hit.point.z - hitDrag.point.z;
                 Vector3 _Vector;
                 
+                // обработка случаев с отрицательными значениями длин параллелограмма селектора 
                 if (xScale < 0.0f && zScale < 0.0f)
                     _Vector = new Vector3(0, 180, 0); 
                 else if (xScale < 0.0f)

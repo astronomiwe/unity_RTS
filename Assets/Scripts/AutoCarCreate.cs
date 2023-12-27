@@ -18,6 +18,7 @@ public class AutoCarCreate : MonoBehaviour
     
     IEnumerator SpawnCar()
     {
+        // создает 3 машинки в радиусе от месте спавна у здания
             for (int i = 1; i <= 3; i++)
             {
                 yield return new WaitForSeconds(time);

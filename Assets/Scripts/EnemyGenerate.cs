@@ -14,6 +14,7 @@ public class EnemyGenerate : MonoBehaviour
 
     IEnumerator SpawnFactory()
     {
+        // генератор зданий в точках, указанных в списке points
         for (int i = 0; i < points.Length; i++)
         {
             yield return new WaitForSeconds(10f);
@@ -25,7 +26,11 @@ public class EnemyGenerate : MonoBehaviour
                 );
             spawned.GetComponent<AutoCarCreate>().enabled = true;
             spawned.GetComponent<AutoCarCreate>().IsEnemy = true;
-            spawned.GetComponent<AutoCarCreate>().StartSpawningCars();
+            
+            // здесь должна быть общий метод действий для здания.
+            // оно же не только машинки генерирует.
+            // кандидат в рефакторинг.
+            spawned.GetComponent<AutoCarCreate>().StartSpawningCars(); 
 
         }
     }

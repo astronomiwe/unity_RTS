@@ -23,12 +23,16 @@ public class PlaceObjects : MonoBehaviour
     public void Update()
     {
         PositionObject();
+        
+        if (Input.GetMouseButtonDown(1))
+            Destroy(gameObject.GetComponent<PlaceObjects>());
 
         if (Input.GetMouseButtonDown(0))
         {
             gameObject.GetComponent<AutoCarCreate>().enabled = true;
             Destroy(gameObject.GetComponent<PlaceObjects>());
         }
+
 
 
 

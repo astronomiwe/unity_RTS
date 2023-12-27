@@ -17,6 +17,7 @@ public class CarAttack : MonoBehaviour
 
     private void DetectCollation()
     {
+        // определяет, что в радиусе есть обьекты
         Collider[] hitColliders = Physics.OverlapSphere(transform.position, radius);
 
         if (hitColliders.Length == 0)
@@ -27,6 +28,7 @@ public class CarAttack : MonoBehaviour
 
         foreach (var el in hitColliders)
         {
+            // проверка, что обьект является противником
             if (
                 (gameObject.CompareTag("Player") && el.gameObject.CompareTag("enemy")) ||
                 (gameObject.CompareTag("enemy") && el.gameObject.CompareTag("Player"))
@@ -45,6 +47,7 @@ public class CarAttack : MonoBehaviour
     {
         while (true)
         {
+            // выпускает пули по обьекту
             yield return new WaitForSeconds(1f);
             GameObject obj = Instantiate(bullet, transform.GetChild(1).position, Quaternion.identity);
             obj.GetComponent<BulletController>().position = enemy.transform.position;
