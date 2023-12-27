@@ -12,6 +12,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Off-road vehicle (3) Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 7085460630238156685, guid: 6d4589dc9441a894fa3062b4c6855966, type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
     - target: {fileID: 7574856985513561399, guid: 6d4589dc9441a894fa3062b4c6855966, type: 3}
       propertyPath: m_LocalPosition.x
       value: -7.670002
@@ -59,6 +63,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 7085460630238156685, guid: 6d4589dc9441a894fa3062b4c6855966, type: 3}
       insertIndex: -1
       addedObject: {fileID: 3568532736910557876}
+    - targetCorrespondingSourceObject: {fileID: 7085460630238156685, guid: 6d4589dc9441a894fa3062b4c6855966, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8556911577017595960}
   m_SourcePrefab: {fileID: 100100000, guid: 6d4589dc9441a894fa3062b4c6855966, type: 3}
 --- !u!1 &8068141863669495832 stripped
 GameObject:
@@ -87,3 +94,16 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!114 &8556911577017595960
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8068141863669495832}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 177c52e30729fb19ca3effd27f782e05, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  radius: 70

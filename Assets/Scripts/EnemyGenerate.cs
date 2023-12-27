@@ -25,6 +25,8 @@ public class EnemyGenerate : MonoBehaviour
                 new Vector3(0, UnityEngine.Random.Range(0, 360), 0)
                 );
             spawned.GetComponent<AutoCarCreate>().enabled = true;
+            spawned.GetComponent<AutoCarCreate>().IsEnemy = true;
+            
         }
     }
 }
