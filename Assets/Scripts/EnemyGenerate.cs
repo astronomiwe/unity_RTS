@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class EnemyGenerate : MonoBehaviour
 {
-    // Start is called before the first frame update
     public Transform[] points;
     public GameObject factory;
 

@@ -1,11 +1,14 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class CarAttack : MonoBehaviour
 {
     public float radius = 70f;
+    public GameObject bullet;
+    private Coroutine _coroutine;
 
     private void Update()
     {
@@ -15,13 +18,36 @@ public class CarAttack : MonoBehaviour
     private void DetectCollation()
     {
         Collider[] hitColliders = Physics.OverlapSphere(transform.position, radius);
+
+        if (hitColliders.Length == 0)
+        {
+            StopCoroutine(_coroutine);
+            _coroutine = null;
+        }
+
         foreach (var el in hitColliders)
         {
-            if(
+            if (
                 (gameObject.CompareTag("Player") && el.gameObject.CompareTag("enemy")) ||
                 (gameObject.CompareTag("enemy") && el.gameObject.CompareTag("Player"))
-                )
-                Debug.Log(el.name);
+            )
+            {
+                if (gameObject.CompareTag("enemy"))
+                    GetComponent<UnityEngine.AI.NavMeshAgent>().SetDestination(el.transform.position);
+                
+                if (_coroutine == null)
+                    _coroutine = StartCoroutine(StartAttack(el.transform.position));
+            }
+        }
+    }
+
+    IEnumerator StartAttack(Vector3 enemyPos)
+    {
+        while (true)
+        {
+            yield return new WaitForSeconds(1f);
+            GameObject obj = Instantiate(bullet, transform.GetChild(1).position, Quaternion.identity);
+            obj.GetComponent<BulletController>().position = enemyPos;
         }
     }
 }

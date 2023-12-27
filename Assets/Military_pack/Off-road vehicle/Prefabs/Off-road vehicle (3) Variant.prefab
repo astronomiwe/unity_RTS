@@ -1,5 +1,36 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &5915640501974781998
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2856620610424809003}
+  m_Layer: 8
+  m_Name: BulletPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2856620610424809003
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5915640501974781998}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.09, y: 2.089, z: 0.946}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7258708498006549154}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &982717792529035157
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -58,7 +89,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 7574856985513561399, guid: 6d4589dc9441a894fa3062b4c6855966, type: 3}
+      insertIndex: 1
+      addedObject: {fileID: 2856620610424809003}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 7085460630238156685, guid: 6d4589dc9441a894fa3062b4c6855966, type: 3}
       insertIndex: -1
@@ -67,6 +101,11 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 8556911577017595960}
   m_SourcePrefab: {fileID: 100100000, guid: 6d4589dc9441a894fa3062b4c6855966, type: 3}
+--- !u!4 &7258708498006549154 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7574856985513561399, guid: 6d4589dc9441a894fa3062b4c6855966, type: 3}
+  m_PrefabInstance: {fileID: 982717792529035157}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &8068141863669495832 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7085460630238156685, guid: 6d4589dc9441a894fa3062b4c6855966, type: 3}
@@ -107,3 +146,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   radius: 70
+  bullet: {fileID: 6036384683765579020, guid: 7bb2793c9ba6762b6a1d3c9c33cb1797, type: 3}
