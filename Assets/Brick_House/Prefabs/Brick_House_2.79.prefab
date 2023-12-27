@@ -59,6 +59,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: a08df360d734c4043b496ce77812d2d6, type: 3}
       insertIndex: -1
       addedObject: {fileID: -5539808044820048622}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: a08df360d734c4043b496ce77812d2d6, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: -2189616784627622386}
   m_SourcePrefab: {fileID: 100100000, guid: a08df360d734c4043b496ce77812d2d6, type: 3}
 --- !u!1 &1832482165228580352 stripped
 GameObject:
@@ -80,3 +83,18 @@ MonoBehaviour:
   layer:
     serializedVersion: 2
     m_Bits: 128
+  rotateSpeed: 80
+--- !u!114 &-2189616784627622386
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1832482165228580352}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cdda4efea5b6e48768eedc1da2efb510, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  car: {fileID: 8068141863669495832, guid: d86b313538d758566b0c304f5c1e79ae, type: 3}
+  time: 5
