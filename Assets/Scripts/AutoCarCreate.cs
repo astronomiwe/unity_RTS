@@ -18,7 +18,12 @@ public class AutoCarCreate : MonoBehaviour
         for (int i = 1; i <= 3; i++)
         {
             yield return new WaitForSeconds(time);
-            Instantiate(car, transform.GetChild(0).position, Quaternion.identity);
+            Vector3 pos = new Vector3(
+                transform.GetChild(0).position.x+UnityEngine.Random.Range	(3f,7f),
+                  transform.GetChild(0).position.y,
+                transform.GetChild(0).position.z+UnityEngine.Random.Range	(3f,7f),
+                )
+            Instantiate(car, pos, Quaternion.identity);
         }
     }
 }
