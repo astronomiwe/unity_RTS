@@ -6,7 +6,7 @@ using UnityEngine;
 public class BulletController : MonoBehaviour
 {
     [NonSerialized] public Vector3 position;
-    public float speed = 30f, damage = 12.5f; // все пули сейчас наносят 12.5 дамага. вынести как Health в скрипт?
+    public float speed = 5f, damage = 12.5f; // все снаряды сейчас одинаковые. вынести в скрипт Damage? как Health.
 
     private void Update()
     {
