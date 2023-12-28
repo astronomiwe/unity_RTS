@@ -1,7 +1,4 @@
-using System;
 using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -10,6 +7,7 @@ public class CarAttack : MonoBehaviour
     public float radius = 70f;
     public GameObject bullet;
     private Coroutine _coroutine;
+    public float minDistance = 60f; // Минимальное расстояние, на которое можно приблизиться к цели
 
     private void Update()
     {
@@ -39,23 +37,26 @@ public class CarAttack : MonoBehaviour
                 (gameObject.CompareTag("enemy") && el.gameObject.CompareTag("Player"))
             )
             {
-                if (gameObject.CompareTag("enemy"))
-                    GetComponent<UnityEngine.AI.NavMeshAgent>().SetDestination(el.transform.position);
-                
                 if (_coroutine == null)
                     _coroutine = StartCoroutine(StartAttack(el));
+                
+                if (Vector3.Distance(transform.position, el.transform.position) > minDistance) 
+                    if (gameObject.CompareTag("enemy"))
+                        GetComponent<NavMeshAgent>().SetDestination(el.transform.position);
+
+
             }
         }
     }
 
     IEnumerator StartAttack(Collider enemy)
     {
-            // выпускает пули по обьекту
-            GameObject obj = Instantiate(bullet, transform.GetChild(1).position, Quaternion.identity);
-            obj.GetComponent<BulletController>().position = enemy.transform.position;
-            yield return new WaitForSeconds(1f);
+        // выпускает пули по обьекту
+        GameObject obj = Instantiate(bullet, transform.GetChild(1).position, Quaternion.identity);
+        obj.GetComponent<BulletController>().position = enemy.transform.position;
+        yield return new WaitForSeconds(1f);
 
-            StopCoroutine(_coroutine);
-            _coroutine = null;
+        StopCoroutine(_coroutine);
+        _coroutine = null;
     }
 }
