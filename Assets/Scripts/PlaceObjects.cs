@@ -33,9 +33,6 @@ public class PlaceObjects : MonoBehaviour
             Destroy(gameObject.GetComponent<PlaceObjects>());
         }
 
-
-
-
         if (Input.GetKey(KeyCode.LeftShift))
             transform.Rotate(Vector3.up * Time.deltaTime * rotateSpeed);
     }

@@ -5,7 +5,6 @@ using UnityEngine.PlayerLoop;
 
 public class SelectController : MonoBehaviour
 {
-
     public GameObject cube;
     public LayerMask layer, layerMask;
     public List<GameObject> selectedObjects;
@@ -16,7 +15,6 @@ public class SelectController : MonoBehaviour
     private void Awake()
     {
         _cam = GetComponent<Camera>();
-
     }
 
     private void Update()
@@ -33,7 +31,9 @@ public class SelectController : MonoBehaviour
         if (Input.GetMouseButtonDown(0))
         {
             foreach (var el in selectedObjects)
-                el.transform.GetChild(0).gameObject.SetActive(false);
+                if (el != null)
+                    el.transform.GetChild(0).gameObject.SetActive(false);
+
             selectedObjects.Clear();
 
             Ray ray = _cam.ScreenPointToRay(Input.mousePosition);
@@ -51,21 +51,20 @@ public class SelectController : MonoBehaviour
                 float xScale = (_hit.point.x - hitDrag.point.x) * -1;
                 float zScale = _hit.point.z - hitDrag.point.z;
                 Vector3 _Vector;
-                
+
                 // обработка случаев с отрицательными значениями длин параллелограмма селектора 
                 if (xScale < 0.0f && zScale < 0.0f)
-                    _Vector = new Vector3(0, 180, 0); 
+                    _Vector = new Vector3(0, 180, 0);
                 else if (xScale < 0.0f)
                     _Vector = new Vector3(0, 0, 180);
                 else if (zScale < 0.0f)
                     _Vector = new Vector3(180, 0, 0);
-                else 
+                else
                     _Vector = new Vector3(0, 0, 0);
 
                 _cubeSelection.transform.localRotation = Quaternion.Euler(_Vector);
-                
+
                 _cubeSelection.transform.localScale = new Vector3(Mathf.Abs(xScale), 1, Mathf.Abs(zScale));
-                
             }
 
             if (Input.GetMouseButtonUp(0) && _cubeSelection)
@@ -81,7 +80,7 @@ public class SelectController : MonoBehaviour
                 foreach (var el in hits)
                 {
                     if (el.collider.CompareTag("enemy")) continue;
-                    
+
                     selectedObjects.Add(el.transform.gameObject);
                     el.transform.GetChild(0).gameObject.SetActive(true);
                 }

@@ -6,7 +6,7 @@ using UnityEngine;
 public class BulletController : MonoBehaviour
 {
     [NonSerialized] public Vector3 position;
-    public float speed = 30f;
+    public float speed = 30f, damage = 12.5f; // все пули сейчас наносят 12.5 дамага. вынести как Health в скрипт?
 
     private void Update()
     {
@@ -16,5 +16,11 @@ public class BulletController : MonoBehaviour
         
         if (transform.position==position)
             Destroy(gameObject);
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("enemy") || other.CompareTag("Player"))
+            other.GetComponent<Health>().TakeDamage(damage);
     }
 }

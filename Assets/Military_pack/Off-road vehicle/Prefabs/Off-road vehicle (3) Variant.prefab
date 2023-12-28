@@ -39,6 +39,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1633239402190957989, guid: 6d4589dc9441a894fa3062b4c6855966, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3276590817952202153, guid: 6d4589dc9441a894fa3062b4c6855966, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3276590817952202153, guid: 6d4589dc9441a894fa3062b4c6855966, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7085460630238156685, guid: 6d4589dc9441a894fa3062b4c6855966, type: 3}
       propertyPath: m_Name
       value: Off-road vehicle (3) Variant
@@ -87,6 +99,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8446781964651077020, guid: 6d4589dc9441a894fa3062b4c6855966, type: 3}
+      propertyPath: m_Name
+      value: HealthBar
+      objectReference: {fileID: 0}
+    - target: {fileID: 8446781964651077020, guid: 6d4589dc9441a894fa3062b4c6855966, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
@@ -100,6 +120,15 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 7085460630238156685, guid: 6d4589dc9441a894fa3062b4c6855966, type: 3}
       insertIndex: -1
       addedObject: {fileID: 8556911577017595960}
+    - targetCorrespondingSourceObject: {fileID: 7085460630238156685, guid: 6d4589dc9441a894fa3062b4c6855966, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2362524832531527691}
+    - targetCorrespondingSourceObject: {fileID: 7085460630238156685, guid: 6d4589dc9441a894fa3062b4c6855966, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 187072926952212881}
+    - targetCorrespondingSourceObject: {fileID: 8446781964651077020, guid: 6d4589dc9441a894fa3062b4c6855966, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7856094785058736473}
   m_SourcePrefab: {fileID: 100100000, guid: 6d4589dc9441a894fa3062b4c6855966, type: 3}
 --- !u!4 &7258708498006549154 stripped
 Transform:
@@ -147,3 +176,61 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   radius: 70
   bullet: {fileID: 6036384683765579020, guid: 7bb2793c9ba6762b6a1d3c9c33cb1797, type: 3}
+--- !u!54 &2362524832531527691
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8068141863669495832}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!114 &187072926952212881
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8068141863669495832}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9df61acfe861eccf7ab88d68c07fe0b0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 100
+--- !u!1 &8690733220407423497 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8446781964651077020, guid: 6d4589dc9441a894fa3062b4c6855966, type: 3}
+  m_PrefabInstance: {fileID: 982717792529035157}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &7856094785058736473
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8690733220407423497}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9df61acfe861eccf7ab88d68c07fe0b0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 100
